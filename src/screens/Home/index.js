@@ -38,7 +38,7 @@ export default function Home() {
 
   useEffect(() => {
     if (selectedValue !== 'All tags') {
-      console.log('LOADING_FILTER_FED ', selectedValue);
+      dispatch(LOADING_FILTER_FED({ selectedValue }));
     }
   }, [selectedValue]);
 
