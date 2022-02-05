@@ -1,5 +1,6 @@
 import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { globalState } from '@/store/slices';
 
 jest.mock('@react-navigation/native', () => {
   const originalModule = jest.requireActual('@react-navigation/native');
@@ -11,7 +12,7 @@ jest.mock('@react-navigation/native', () => {
     useNavigation: jest.fn(() => jest.fn),
     useRoute: () => ({
       params: {
-        id: jest.fn
+        data: jest.fn
       }
     }),
     useIsFocused: jest.fn()
@@ -21,4 +22,5 @@ jest.mock('@react-navigation/native', () => {
 jest.mock('@react-native-community/netinfo', () => mockRNCNetInfo);
 jest.mock('react-redux');
 
+useSelector.mockImplementation(fn => fn(globalState));
 useDispatch.mockReturnValue(jest.fn);

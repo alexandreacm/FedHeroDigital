@@ -5,14 +5,14 @@ import {
   renderWithTheme
 } from '@/helpers/functions/testing';
 
-import Home from '@/screens/Home';
+import DetailsFed from '@/screens/DetailsFed';
 
-describe('tests in Home Screen', () => {
+describe('tests in DetailsFed Screen', () => {
   test('matches snapshot', () => {
-    matchSnapshotWithTheme(<Home />);
+    matchSnapshotWithTheme(<DetailsFed />);
   });
 
   test('renders correctly', () => {
-    renderWithTheme(<Home />);
+    renderWithTheme(<DetailsFed />);
   });
 });

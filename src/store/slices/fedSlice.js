@@ -53,6 +53,8 @@ const fedSlice = createSlice({
 
 const { actions, reducer } = fedSlice;
 
+export const fedState = initialState;
+
 export const {
   LOADING_FED,
   FED_SUCCESS,
